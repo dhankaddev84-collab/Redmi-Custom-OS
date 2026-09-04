@@ -1,0 +1,42 @@
+.rom-guide {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 25px;
+  font-family: Arial, sans-serif;
+  line-height: 1.7;
+}
+
+.rom-guide h1 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.rom-guide h2 {
+  margin-top: 30px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+}
+
+.rom-guide pre {
+  background: #111;
+  color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+}
+
+.rom-guide code {
+  font-family: monospace;
+}
+
+.rom-guide li {
+  margin: 8px 0;
+}
+
+.warning {
+  background: #fff3cd;
+  border-left: 5px solid #ffc107;
+  padding: 15px;
+  margin: 20px 0;
+  border-radius: 6px;
+}

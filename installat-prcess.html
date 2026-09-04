@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="install-process.css">
+</head>
+
+<body><section class="rom-guide">
+
+  <h1>Custom ROM Installation Guide</h1>
+
+  <h2>In-ROM Flash Requirements</h2>
+
+  <ul>
+    <li>Bootloader must be unlocked.</li>
+    <li>ROM must be specifically made for your exact device model/codename.</li>
+    <li>Install the firmware version required by the ROM developer.</li>
+    <li>Use the recovery recommended for the ROM (TWRP, OrangeFox, etc.).</li>
+    <li>Battery should be at least 60% charged.</li>
+    <li>Take a complete backup of your personal data.</li>
+    <li>Use the official/recommended ROM ZIP.</li>
+    <li>Flash GApps only if they are not already included in the ROM.</li>
+    <li>ADB and Fastboot Platform-Tools must be installed on your PC.</li>
+    <li>Use a good-quality USB data cable.</li>
+  </ul>
+
+  <div class="warning">
+    <strong>⚠️ Important:</strong>
+    Firmware, recovery and installation requirements can vary between ROMs.
+    Always follow the ROM developer's official instructions.
+  </div>
+
+  <h2>Step 1: Enable Developer Options</h2>
+
+  <p>
+    Go to <b>Settings → About Phone</b> and tap
+    <b>Build Number</b> 7 times.
+  </p>
+
+  <p>Then open Developer Options and enable:</p>
+
+  <ul>
+    <li>OEM Unlocking</li>
+    <li>USB Debugging</li>
+  </ul>
+
+  <h2>Step 2: Unlock Bootloader</h2>
+
+  <p>Connect your phone to the PC and run:</p>
+
+  <pre><code>adb reboot bootloader</code></pre>
+
+  <p>Then use the command supported by your device:</p>
+
+  <pre><code>fastboot flashing unlock</code></pre>
+
+  <p>Or, on some devices:</p>
+
+  <pre><code>fastboot oem unlock</code></pre>
+
+  <div class="warning">
+    ⚠️ Bootloader unlocking normally erases all user data.
+  </div>
+
+  <h2>Step 3: Flash Custom Recovery</h2>
+
+  <p>While the phone is in Fastboot mode:</p>
+
+  <pre><code>fastboot flash recovery recovery.img</code></pre>
+
+  <p>
+    After flashing, boot directly into the custom recovery using
+    your device's recovery key combination.
+  </p>
+
+  <h2>Step 4: Wipe Data</h2>
+
+  <p>In TWRP/OrangeFox:</p>
+
+  <ol>
+    <li>Go to <b>Wipe</b>.</li>
+    <li>Select <b>Format Data</b>.</li>
+    <li>Type <b>yes</b> to confirm.</li>
+  </ol>
+
+  <div class="warning">
+    ⚠️ Do not blindly wipe System or other partitions.
+    Follow the specific ROM's clean-flash instructions.
+  </div>
+
+  <h2>Step 5: Flash Custom ROM</h2>
+
+  <p>Open <b>Advanced → ADB Sideload</b> in recovery.</p>
+
+  <p>On the PC:</p>
+
+  <pre><code>adb sideload ROM.zip</code></pre>
+
+
+  
+
+  <h2>Step 6: Reboot</h2>
+
+  <p>
+    After installation is complete, select:
+    <b>Reboot → System</b>
+  </p>
+
+  <p>
+    The first boot may take several minutes.
+  </p>
+
+  <div class="warning">
+    ⚠️ Flashing an incorrect ROM, firmware or recovery can cause
+    bootloops or potentially brick the device. Verify your exact
+    device model and ROM requirements before flashing.
+  </div>
+
+
+</section>
